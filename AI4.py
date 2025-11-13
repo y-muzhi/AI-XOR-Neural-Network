@@ -1,8 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from typing import List
-
-import matplotlib.pyplot as plt
 from random import random, seed
 from typing import Optional, List, Callable, TypeVar, Tuple
 from math import exp
@@ -188,7 +185,7 @@ class Network:
             plt.xlabel("Epoch")
             plt.ylabel("Total Error")
             plt.grid(True)
-            # plt.show()
+            plt.show()  # 添加此行，显示训练曲线
 
     def predict(self, inputs: List[float], threshold: float = 0.5) -> List[float]:
         """返回原始输出，也可以用 threshold 把输出变成 0/1"""
@@ -336,29 +333,8 @@ if __name__ == "__main__":
     for x in xs:
         print(f"{x} -> {nn.outputs(x)} -> {nn.predict(x)}")
     
-    # 可视化隐藏层神经元激活区域
+    # 可视化隐藏层神经元激活区域（关闭此图后显示下一个）
     visualize_hidden_activations(nn, resolution=50)
     
     # 可视化整体决策边界
     visualize_decision_boundary(nn, resolution=100)
-
-
-
-cd /Users/muzhi/Desktop/C++/测试程序/AI4.py
-
-git init
-
-git config user.name "y-muzhi"
-git config user.email "2317223363@qq.com"
-
-
-git add .
-
-
-git commit -m "Initial commit: Add XOR neural network training code"
-
-
-git remote add origin https://github.com/y-muzhi/AI-XOR-Neural-Network.git
-
-git branch -M main
-git push -u origin main
